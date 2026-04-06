@@ -1,0 +1,22 @@
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int[] arr={1,7,3,4,1,2};
+        boolean f=false;
+        HashMap<Integer,Integer> map=new HashMap<>();
+        for(int num:arr){
+            map.put(num,map.getOrDefault(num,0)+1);
+            
+        }
+        for(int n:arr){
+            if(map.get(n)>arr.length/2){
+                System.out.print(n);
+                f=true;
+                return;
+            }
+        }
+        if(!f){
+            System.out.print("Not exist");
+        }
+    }
+}
